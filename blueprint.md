@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a modern web application that generates and displays a set of random lottery numbers. It features a polished UI with glassmorphism effects and a theme switcher.
+This is a modern web application that generates and displays a set of random lottery numbers. It features a polished UI with glassmorphism effects, a theme switcher, and a partnership inquiry form.
 
 ## Project Outline
 
@@ -15,20 +15,21 @@ This is a modern web application that generates and displays a set of random lot
 *   **Modern Aesthetics:** Added 'Poppins' typography, background gradients, and ball animations.
 *   **Animated Interaction:** Lotto balls appear one by one with a pop-in effect.
 
-### Version 1.2 (Current)
-*   **Theme Switcher:** Added Dark Mode and Light Mode support.
-*   **Modern CSS:** Implemented theme variables using `oklch` color space and CSS custom properties.
-*   **Glassmorphism:** Enhanced the main container with blur effects and semi-transparent borders.
-*   **Persistence:** Theme preference is saved in `localStorage`.
-*   **Accessibility:** Added theme toggle button with appropriate labels.
+### Version 1.2 (Theme System)
+*   **Theme Switcher:** Added Dark Mode and Light Mode support with `localStorage` persistence.
+*   **Modern CSS:** Implemented theme variables using `oklch` color space and glassmorphism.
+
+### Version 1.3 (Partnership Form)
+*   **Inquiry Form:** Added a partnership inquiry section powered by **Formspree**.
+*   **AJAX Submission:** Implemented seamless form submission using the `fetch` API to prevent page reloads.
+*   **Form UX:** Added loading states and success/error messaging for user feedback.
 
 ## Current Plan
 
-**Request:** Add Dark/Light mode and deploy via git.
+**Request:** Add a partnership inquiry form using Formspree and deploy.
 
 **Steps:**
-1.  Define CSS variables for light/dark themes in `style.css`.
-2.  Add a theme toggle button in `index.html`.
-3.  Implement theme switching and persistence logic in `main.js`.
-4.  Update `blueprint.md` to reflect changes.
-5.  Push changes to GitHub.
+1.  Add the form structure to `index.html` using the provided Formspree endpoint.
+2.  Update `style.css` to include styles for form inputs, textareas, and submission feedback.
+3.  Add AJAX handling in `main.js` for a modern submission experience.
+4.  Push changes to GitHub.

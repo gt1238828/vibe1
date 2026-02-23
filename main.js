@@ -65,5 +65,48 @@ generateButton.addEventListener('click', () => {
     }, 6 * 150 + 100);
 });
 
+// --- Formspree AJAX Logic ---
+
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const data = new FormData(e.target);
+        const submitButton = e.target.querySelector('button[type="submit"]');
+        
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+        formStatus.textContent = '';
+
+        try {
+            const response = await fetch(e.target.action, {
+                method: 'POST',
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                formStatus.className = 'success';
+                formStatus.textContent = 'Thank you! Your inquiry has been sent.';
+                contactForm.reset();
+            } else {
+                const result = await response.json();
+                formStatus.className = 'error';
+                formStatus.textContent = result.errors ? result.errors.map(error => error.message).join(", ") : 'Oops! Something went wrong.';
+            }
+        } catch (error) {
+            formStatus.className = 'error';
+            formStatus.textContent = 'Oops! There was a problem submitting your form.';
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Send Inquiry';
+        }
+    });
+}
+
 // Initial generation
 displayNumbers(generateLottoNumbers());
