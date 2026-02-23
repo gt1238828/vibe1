@@ -1,63 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator</title>
+    <title>Vibe1 | 프리미엄 로또 번호 생성기 및 당첨 분석 팁</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Vibe1은 최신 알고리즘을 활용한 무료 로또 번호 생성 서비스입니다. 로또 당첨 확률을 높이는 팁과 커뮤니티 기능을 통해 최고의 사용자 경험을 제공합니다.">
+    <meta name="keywords" content="로또번호생성기, 무료로또, 로또당첨팁, 로또분석, Vibe1, 로또자동추첨">
+    <meta name="author" content="Vibe1 Team">
+    <link rel="canonical" href="https://github.com/gt1238828/vibe1">
+
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="Vibe1 | 프리미엄 로또 번호 생성기">
+    <meta property="og:description" content="확률 기반의 스마트한 로또 번호 생성 서비스">
+    <meta property="og:type" content="website">
+
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5180279622373689"
      crossorigin="anonymous"></script>
 </head>
 <body data-theme="light">
-    <div class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">
+    <div class="theme-toggle" id="theme-toggle" aria-label="다크 모드 전환">
         <span id="theme-icon">🌙</span>
     </div>
 
-    <main class="main-layout">
-        <div class="container">
-            <h1>Lotto Generator</h1>
-            <div id="lotto-container"></div>
-            <button id="generate-button">Generate Numbers</button>
-        </div>
+    <header class="site-header">
+        <nav class="nav-container">
+            <div class="logo">Vibe1</div>
+            <ul class="nav-links">
+                <li><a href="#generator">생성기</a></li>
+                <li><a href="#about">서비스 소개</a></li>
+                <li><a href="#tips">당첨 팁</a></li>
+                <li><a href="#contact">제휴 문의</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="container inquiry-container">
+    <main class="main-layout">
+        <!-- Ad Slot (Upper) -->
+        <div class="ad-placeholder">광고 영역 (승인 후 자동 게재)</div>
+
+        <!-- Section 1: Generator -->
+        <section id="generator" class="container">
+            <h1>Premium Lotto Generator</h1>
+            <p class="subtitle">엄격한 난수 생성 알고리즘으로 추출된 행운의 번호를 확인하세요.</p>
+            <div id="lotto-container"></div>
+            <button id="generate-button">번호 생성하기</button>
+        </section>
+
+        <!-- Section 2: About & Value -->
+        <section id="about" class="container content-section">
+            <h2>About Vibe1</h2>
+            <p>Vibe1은 사용자들에게 단순한 번호 생성을 넘어, 최상의 UX와 가독성을 제공하기 위해 설계된 프리미엄 웹 도구입니다. 우리의 엔진은 암호학적으로 안전한 난수 생성 방식을 지향하며, 사용자들의 행운을 진심으로 기원합니다.</p>
+        </section>
+
+        <!-- Section 3: High-Quality Content (Essential for AdSense) -->
+        <section id="tips" class="container content-section">
+            <h2>로또 당첨 확률을 높이는 전략</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h3>1. 균형 있는 조합</h3>
+                    <p>홀수와 짝수의 비율을 2:4, 3:3, 4:2 정도로 유지하는 것이 통계적으로 유리합니다.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>2. 총합의 법칙</h3>
+                    <p>6개 번호의 총합이 100에서 170 사이에 위치하는 경우가 전체 당첨 번호의 70% 이상을 차지합니다.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>3. 연속 번호 지양</h3>
+                    <p>3개 이상의 연속 번호(예: 1, 2, 3)가 나올 확률은 매우 낮으므로 피하는 것이 좋습니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Partnership -->
+        <section id="contact" class="container inquiry-container">
             <h2>Partnership Inquiry</h2>
             <form id="contact-form" action="https://formspree.io/f/xvzbvzvd" method="POST">
                 <div class="form-group">
-                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="text" name="name" placeholder="이름/업체명" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="email" name="email" placeholder="이메일 주소" required>
                 </div>
                 <div class="form-group">
-                    <textarea name="message" placeholder="How can we help you?" rows="4" required></textarea>
+                    <textarea name="message" placeholder="제휴 제안 또는 문의 사항을 입력해주세요." rows="4" required></textarea>
                 </div>
-                <button type="submit" id="submit-button">Send Inquiry</button>
+                <button type="submit" id="submit-button">문의 보내기</button>
                 <p id="form-status"></p>
             </form>
-        </div>
+        </section>
 
-        <div class="container comments-container">
-            <h2>Community</h2>
+        <!-- Section 5: Community -->
+        <section class="container comments-container">
+            <h2>Community Feedback</h2>
             <div id="disqus_thread"></div>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        </div>
+        </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Vibe1. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#" onclick="alert('준비 중인 페이지입니다.'); return false;">개인정보처리방침</a></li>
+                <li><a href="#" onclick="alert('준비 중인 페이지입니다.'); return false;">이용약관</a></li>
+            </ul>
+        </div>
+    </footer>
 
     <script src="main.js"></script>
     <script>
-        /**
-         *  Disqus Configuration
-         */
         var disqus_config = function () {
-            // Use window.location.origin + pathname to avoid issues with hashes or queries
             this.page.url = window.location.origin + window.location.pathname;
-            this.page.identifier = 'vibe1-home-unique'; 
+            this.page.identifier = 'vibe1-home-final'; 
         };
-        
         (function() { 
             var d = document, s = d.createElement('script');
             s.src = 'https://vibe1.disqus.com/embed.js';
