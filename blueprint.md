@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a modern web application that generates and displays a set of random lottery numbers. It features a polished UI with glassmorphism effects, a theme switcher, a partnership inquiry form, and a community comments section.
+This is a modern web application that generates and displays a set of random lottery numbers. It features a polished UI with glassmorphism effects, a theme switcher, a partnership inquiry form, community comments, and Google AdSense integration.
 
 ## Project Outline
 
@@ -13,25 +13,25 @@ This is a modern web application that generates and displays a set of random lot
 
 ### Version 1.1 (Enhancement)
 *   **Modern Aesthetics:** Added 'Poppins' typography, background gradients, and ball animations.
-*   **Animated Interaction:** Lotto balls appear one by one with a pop-in effect.
 
 ### Version 1.2 (Theme System)
 *   **Theme Switcher:** Added Dark Mode and Light Mode support with `localStorage` persistence.
-*   **Modern CSS:** Implemented theme variables using `oklch` color space and glassmorphism.
+*   **Modern CSS:** Implemented theme variables and glassmorphism.
 
 ### Version 1.3 (Partnership Form)
 *   **Inquiry Form:** Added a partnership inquiry section powered by **Formspree**.
-*   **AJAX Submission:** Implemented seamless form submission using the `fetch` API.
 
 ### Version 1.4 (Community Features)
-*   **Disqus Comments:** Integrated **Disqus** comment system for user interaction and community engagement.
-*   **Themed Integration:** Styled the comments section to match the glassmorphism aesthetic.
+*   **Disqus Comments:** Integrated **Disqus** comment system for user interaction.
+*   **Compatibility Fix:** Reverted to HEX colors to fix Disqus `parseColor` error.
+
+### Version 1.5 (Monetization)
+*   **Google AdSense:** Integrated Google AdSense (Auto Ads) to enable monetization.
 
 ## Current Plan
 
-**Request:** Add Disqus comments and deploy.
+**Request:** Add Google AdSense.
 
 **Steps:**
-1.  Add the Disqus thread container and script to `index.html`.
-2.  Update `style.css` to align the comments container with the existing design.
-3.  Commit and push changes to GitHub.
+1.  Insert the AdSense script tag into the `<head>` of `index.html`.
+2.  Commit and push changes to GitHub.
