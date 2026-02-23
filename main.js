@@ -1,13 +1,37 @@
-
 const lottoContainer = document.getElementById('lotto-container');
 const generateButton = document.getElementById('generate-button');
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const htmlElement = document.documentElement;
+
+// --- Theme Logic ---
+
+const setTheme = (theme) => {
+    htmlElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+};
+
+const toggleTheme = () => {
+    const currentTheme = htmlElement.getAttribute('data-theme') || 'light';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+};
+
+// Initialize theme
+const savedTheme = localStorage.getItem('theme') || 'light';
+setTheme(savedTheme);
+
+themeToggle.addEventListener('click', toggleTheme);
+
+// --- Lotto Logic ---
 
 const getBallColor = (number) => {
-    if (number <= 10) return '#fbc400'; // Vibrant Yellow
-    if (number <= 20) return '#00b894'; // Teal
-    if (number <= 30) return '#d63031'; // Strong Red
-    if (number <= 40) return '#6c5ce7'; // Purple
-    return '#e17055'; // Orange
+    if (number <= 10) return 'oklch(75% 0.18 85)';   // Yellow/Orange
+    if (number <= 20) return 'oklch(65% 0.15 200)';  // Blue
+    if (number <= 30) return 'oklch(60% 0.18 20)';   // Red/Pink
+    if (number <= 40) return 'oklch(55% 0.12 250)';  // Purple
+    return 'oklch(70% 0.15 150)';                    // Green
 };
 
 const generateLottoNumbers = () => {
@@ -28,21 +52,18 @@ const displayNumbers = (numbers) => {
             ball.style.backgroundColor = getBallColor(number);
             ball.textContent = number;
             lottoContainer.appendChild(ball);
-        }, index * 200); // Stagger the appearance of each ball
+        }, index * 150);
     });
 };
 
 generateButton.addEventListener('click', () => {
-    // Disable button during animation
     generateButton.disabled = true;
     const numbers = generateLottoNumbers();
     displayNumbers(numbers);
-    // Re-enable the button after the animation is complete
     setTimeout(() => {
         generateButton.disabled = false;
-    }, 6 * 200); // Match the total delay
+    }, 6 * 150 + 100);
 });
 
-// Initial generation on page load
-const initialNumbers = generateLottoNumbers();
-displayNumbers(initialNumbers);
+// Initial generation
+displayNumbers(generateLottoNumbers());
