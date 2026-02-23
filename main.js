@@ -27,11 +27,11 @@ themeToggle.addEventListener('click', toggleTheme);
 // --- Lotto Logic ---
 
 const getBallColor = (number) => {
-    if (number <= 10) return 'oklch(75% 0.18 85)';   // Yellow/Orange
-    if (number <= 20) return 'oklch(65% 0.15 200)';  // Blue
-    if (number <= 30) return 'oklch(60% 0.18 20)';   // Red/Pink
-    if (number <= 40) return 'oklch(55% 0.12 250)';  // Purple
-    return 'oklch(70% 0.15 150)';                    // Green
+    if (number <= 10) return '#fbc400'; // Yellow
+    if (number <= 20) return '#00b894'; // Teal
+    if (number <= 30) return '#d63031'; // Red
+    if (number <= 40) return '#6c5ce7'; // Purple
+    return '#e17055'; // Orange
 };
 
 const generateLottoNumbers = () => {
