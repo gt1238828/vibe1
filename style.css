@@ -67,6 +67,11 @@ body {
     position: relative;
 }
 
+.comments-container {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
 h1, h2 {
     margin-bottom: 1.5rem;
     font-weight: 700;

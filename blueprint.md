@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a modern web application that generates and displays a set of random lottery numbers. It features a polished UI with glassmorphism effects, a theme switcher, and a partnership inquiry form.
+This is a modern web application that generates and displays a set of random lottery numbers. It features a polished UI with glassmorphism effects, a theme switcher, a partnership inquiry form, and a community comments section.
 
 ## Project Outline
 
@@ -21,15 +21,17 @@ This is a modern web application that generates and displays a set of random lot
 
 ### Version 1.3 (Partnership Form)
 *   **Inquiry Form:** Added a partnership inquiry section powered by **Formspree**.
-*   **AJAX Submission:** Implemented seamless form submission using the `fetch` API to prevent page reloads.
-*   **Form UX:** Added loading states and success/error messaging for user feedback.
+*   **AJAX Submission:** Implemented seamless form submission using the `fetch` API.
+
+### Version 1.4 (Community Features)
+*   **Disqus Comments:** Integrated **Disqus** comment system for user interaction and community engagement.
+*   **Themed Integration:** Styled the comments section to match the glassmorphism aesthetic.
 
 ## Current Plan
 
-**Request:** Add a partnership inquiry form using Formspree and deploy.
+**Request:** Add Disqus comments and deploy.
 
 **Steps:**
-1.  Add the form structure to `index.html` using the provided Formspree endpoint.
-2.  Update `style.css` to include styles for form inputs, textareas, and submission feedback.
-3.  Add AJAX handling in `main.js` for a modern submission experience.
-4.  Push changes to GitHub.
+1.  Add the Disqus thread container and script to `index.html`.
+2.  Update `style.css` to align the comments container with the existing design.
+3.  Commit and push changes to GitHub.
